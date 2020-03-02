@@ -20,6 +20,7 @@ We'll work with three data sets:
 - nba.csv -- NBA player stats
 - nfl.csv -- NFL team stats
 - txmiddle.csv -- Test scores for Texas middle schools 
+
 Bring the .csv files into R. They all have field names, so we include this: col_names = TRUE
 newfilename <- read_csv('csv file name', col_names = TRUE)
 ```
