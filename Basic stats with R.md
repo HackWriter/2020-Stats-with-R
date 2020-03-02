@@ -1,3 +1,5 @@
+### GETTING STARTED
+
 First, set your working directory. 
 setwd("FILE PATH HERE")
 
@@ -38,6 +40,7 @@ str(nba)
 We have 509 cases and six variables.
 The first two fields - player and team - are characters, while the other four are numeric.
 
+### DESCRIPTIVES: MIN, MAX, AVERAGE, ETC.
 Let's get some basic statistics from our data - averages, standard deviations, etc. 
 The 'psych' package we loaded has a handy function called 'describe'. 
 describe(filename)
@@ -65,3 +68,45 @@ max(nba$weight, na.rm = TRUE)
 ```
 The heaviest player weights 311 pounds.
 
+### MAKE COMPARISONS: Z-scores
+
+Sometimes we want to compare things on the same scale. 
+For instance, Tacko Fall is the tallest AND heaviest player in our data.
+But is he taller than he is heavy? 
+
+That's where Z-scores come in. Z-scores tell you how far from the average a certain data point - or NBA player - is.
+It's expressed as a standard deviation.
+
+Calculate the Z-score for one variable
+scale(filename$fieldname)
+```
+scale(nba$height)
+```
+Tacko Fall is row 445 in our data. His Z-score, or standardized score, is 3.02. 
+That means his height is 3.02 standard deviations above the average height of 78.3 inches. 
+Now get his standardized weight.
+```
+scale(nba$weight)
+```
+Tacko's weight is 3.88 standard deviations above the average weight of 217.3 pounds.
+So he's heavier (3.88) than he is tall (3.02)
+
+What if you want Z-scores for all variables? scale() works only on numeric data.
+
+In our files, that's columns 3 through 6. Put that range in brackets, like so:
+```
+scale(nba[3:6])
+```
+This time we don't see all cases. Let's save this as a new file (or dataframe in R speak)
+```
+znba <- scale(nba[3:6])
+```
+Let's combine those Z-scores with our original file so we have everything together.
+Use a function called cbind, for column bind.
+
+newfile <- cbind(file1, file2)
+```
+nba_joined <- cbind(nba, znba)
+
+View(nba_joined)
+```
