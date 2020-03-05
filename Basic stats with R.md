@@ -6,7 +6,7 @@ First, set your working directory.
 
 ```setwd("~/IRE_NICAR/NOLA_2020")```
 
-Or you can use the drop-down menu: Session -> Set Working Directory -> Choose Directory
+Or you can use the drop-down menu: **Session -> Set Working Directory -> Choose Directory**
 
 Make sure these four packages are installed and loaded: dplyr, tidyverse, ggplot2 and psych
 
@@ -27,6 +27,7 @@ We'll work with three data sets:
 - txmiddle.csv -- Test scores for Texas middle schools 
 
 Bring the .csv files into R. They all have field names, so we include this: col_names = TRUE
+
 ***newfilename* <- read_csv('*csv file name*', col_names = TRUE)**
 ```
 nba <- read_csv('nba.csv', col_names = TRUE)
@@ -36,6 +37,7 @@ txschools <- read_csv('txmiddle.csv', col_names = TRUE)
 **Tip:** Avoid column names that contain spaces. Go with 'field_name' not 'field name'
 
 Let's start with the NBA file. To see how a file is structured, type
+
 **str(*filename*)**
 ```
 str(nba)
@@ -56,6 +58,7 @@ Classes ‘spec_tbl_df’, ‘tbl_df’, ‘tbl’ and 'data.frame':	509 obs. of
 ### DESCRIPTIVES: MIN, MAX, AVERAGE, ETC.
 Let's get some basic statistics from our data - averages, standard deviations, etc. 
 The 'psych' package we loaded has a handy function called 'describe'. 
+
 **describe(*filename*)**
 ```
 describe(nba)
@@ -67,6 +70,7 @@ The sd (standard deviation) of 4 means about two-thirds of players fall within 4
 That is, about two-third of players range from 21-1/2 to 29-1/2 years old.
 
 You can also get a single statistic for a single variable.
+
 **measure(*filename$fieldname*)**
 ```
 mean(nba$height)
@@ -91,6 +95,7 @@ That's where Z-scores come in. Z-scores tell you how far from the average a cert
 It's expressed as a standard deviation.
 
 Calculate the Z-score for one variable
+
 **scale(*filename$fieldname*)**
 ```
 scale(nba$height)
