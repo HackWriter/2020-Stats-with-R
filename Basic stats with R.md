@@ -10,6 +10,7 @@ Or you can use the drop-down menu: Session -> Set Working Directory -> Choose Di
 
 Make sure these four packages are installed and loaded: dplyr, tidyverse, ggplot2 and psych
 **install.packages("*package_name*")
+
 library(*package_name*)**
 
 ```
@@ -25,7 +26,7 @@ We'll work with three data sets:
 - txmiddle.csv -- Test scores for Texas middle schools 
 
 Bring the .csv files into R. They all have field names, so we include this: col_names = TRUE
-newfilename <- read_csv('csv file name', col_names = TRUE)
+***newfilename* <- read_csv('*csv file name*', col_names = TRUE)**
 ```
 nba <- read_csv('nba.csv', col_names = TRUE)
 nfl <- read_csv('nfl.csv', col_names = TRUE)
@@ -54,7 +55,7 @@ Classes ‘spec_tbl_df’, ‘tbl_df’, ‘tbl’ and 'data.frame':	509 obs. of
 ### DESCRIPTIVES: MIN, MAX, AVERAGE, ETC.
 Let's get some basic statistics from our data - averages, standard deviations, etc. 
 The 'psych' package we loaded has a handy function called 'describe'. 
-describe(filename)
+**describe(*filename*)**
 ```
 describe(nba)
 ```
@@ -65,7 +66,7 @@ The sd (standard deviation) of 4 means about two-thirds of players fall within 4
 That is, about two-third of players range from 21-1/2 to 29-1/2 years old.
 
 You can also get a single statistic for a single variable.
-measure(filename$fieldname)
+**measure(*filename$fieldname*)**
 ```
 mean(nba$height)
 ```
@@ -89,7 +90,7 @@ That's where Z-scores come in. Z-scores tell you how far from the average a cert
 It's expressed as a standard deviation.
 
 Calculate the Z-score for one variable
-scale(filename$fieldname)
+**scale(*filename$fieldname*)**
 ```
 scale(nba$height)
 ```
@@ -115,7 +116,7 @@ znba <- scale(nba[3:6])
 Let's combine those Z-scores with our original file so we have everything together.
 Use a function called cbind, for column bind.
 
-newfile <- cbind(file1, file2)
+***newfile* <- cbind(*file1, file2*)**
 ```
 nba_joined <- cbind(nba, znba)
 
@@ -129,7 +130,7 @@ View(nfl)
 ```
 Look at the relationship between the number of points scored and games won all season.
 
-cor(filename$fieldname1, filename$fieldname2)
+**cor(*filename$fieldname1, filename$fieldname2*)**
 ```
 cor(nfl$pts_scored, nfl$games_won)
 ```
@@ -166,7 +167,7 @@ That means there's a 62 percent chance we got those results by dumb luck.
 
 It helps to visualize your data, too. For one variable, draw a histogram.
 
-hist(filename$fieldname)
+**hist(*filename$fieldname*)**
 ```
 hist(nfl$games_won)
 ```
@@ -175,7 +176,7 @@ hist(nfl$games_won)
 
 For two variables, make a scatter plot.
 
-plot(filename$fieldname1, filename$fieldname2)
+**plot(*filename$fieldname1, filename$fieldname2*)**
 ```
 plot(nfl$games_won, nfl$pts_scored)
 ```
@@ -237,9 +238,9 @@ Let's focus on read_meets, the percentage of students passing the state reading 
 There's a strong correlation of -0.88 between a school's reading pass rates and its share of low-income kids.
 
 We will run a linear model (lm) regression. It's linear because the relationship follows a straight line.
-lm(dependent_variable ~ independent_variable, data=filename)
-You'll see Y for the dependent variable and X for the independent variable, like:
-lm(Y ~ X, data=filename)
+**lm(*dependent_variable ~ independent_variable,* data=*filename*)**
+You can also think of it as Y for the dependent variable and X for the independent variable, like:
+**lm(*Y ~ X*, data=*filename*)
 
 In this case, the reading score is the dependent variable because we think that the score depends on the percent of low-income kids. 
 ```
