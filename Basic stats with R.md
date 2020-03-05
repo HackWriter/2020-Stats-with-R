@@ -159,12 +159,17 @@ hist(filename$fieldname)
 ```
 hist(nfl$games_won)
 ```
+<img src="https://github.com/HackWriter/Stats-with-R/blob/pictures/histogram_nfl_games.png" width="400">
+
+
 For two variables, make a scatter plot.
 
 plot(filename$fieldname1, filename$fieldname2)
 ```
 plot(nfl$games_won, nfl$pts_scored)
 ```
+<img src="https://github.com/HackWriter/Stats-with-R/blob/pictures/scatterplot_nfl_games_points.png" width="400">
+
 You can also draw plots of all pairs of variables. Once again, R takes only numeric variables.
 For the NFL data, that's columns 2 through 9.
 ```
