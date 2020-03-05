@@ -149,6 +149,8 @@ nba_joined <- cbind(nba, znba)
 
 View(nba_joined)
 ```
+<img src="https://github.com/HackWriter/Stats-with-R/blob/pictures/view_nfljoined.png" width="400">
+
 ### FIND RELATIONSHIPS: Correlations
 
 Let's switch to the NFL file and run some correlations.
