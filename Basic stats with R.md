@@ -64,7 +64,14 @@ The 'psych' package we loaded has a handy function called 'describe'.
 describe(nba)
 ```
 The first two fields are strings, so R can't run statistics on them.
-
+```        vars   n   mean    sd median trimmed   mad min   max range  skew kurtosis   se
+player*    1 509    NaN    NA     NA     NaN    NA Inf  -Inf  -Inf    NA       NA   NA
+team*      2 507    NaN    NA     NA     NaN    NA Inf  -Inf  -Inf    NA       NA   NA
+age        3 507  25.54  4.05   25.0   25.21  4.45  19  43.0  24.0  0.76     0.30 0.18
+height     4 509  78.34  3.53   78.0   78.33  2.97  63  89.0  26.0 -0.03     0.27 0.16
+weight     5 507 217.26 24.16  215.0  216.43 25.20 160 311.0 151.0  0.39     0.01 1.07
+points     6 505   8.66  6.58    7.1    7.88  5.78   0  35.2  35.2  1.08     0.86 0.29
+```
 But check out the last four. The average age of NBA players, for instance, is 25-1/2. They range from 19 to 43 years old.
 The sd (standard deviation) of 4 means about two-thirds of players fall within 4 years of the average age.
 That is, about two-third of players range from 21-1/2 to 29-1/2 years old.
@@ -102,13 +109,27 @@ scale(nba$height)
 ```
 Tacko Fall is row 445 in our data. His Z-score, or standardized score, is 3.02. 
 That means his height is 3.02 standard deviations above the average height of 78.3 inches. 
+```
+[443,] -1.51370374
+[444,]  0.46986611
+[445,]  3.02017021
+[446,]  0.75323323
+[447,] -0.66360238
+```
+
 Now get his standardized weight.
 ```
 scale(nba$weight)
 ```
 Tacko's weight is 3.88 standard deviations above the average weight of 217.3 pounds.
 So he's heavier (3.88) than he is tall (3.02)
-
+```
+[443,] -1.12820207
+[444,]  0.11347329
+[445,]  3.87988856
+[446,]  0.61014344
+[447,]  0.69292179
+```
 What if you want Z-scores for all variables? scale() works only on numeric data.
 
 In our files, that's columns 3 through 6. Put that range in brackets, like so:
