@@ -175,11 +175,15 @@ For the NFL data, that's columns 2 through 9.
 ```
 pairs(nfl[2:9])
 ```
+<img src="https://github.com/HackWriter/Stats-with-R/blob/pictures/matrix_nfl_allpairs.png" width="400">
+
 What if you want to show three pairs of variables that aren't in order? Here's the syntax.
 pairs(~ fieldname2 + fieldname4 + fieldname6, data = filename )
 ```
 pairs(~ pts_scored + giveaways + yds_allowed, data = nfl)
 ```
+<img src="https://github.com/HackWriter/Stats-with-R/blob/pictures/matrix_nfl_3pairs.png" width="400">
+
 ### MAKING PREDICTIONS: Regression
 
 Regression shows how strongly two or more variables are related.
@@ -190,6 +194,7 @@ Let's work with the txschools file.
 View(txschools)
 ```
 It shows student test scores and demographics for Dallas-area middle schools. 
+<img src="https://github.com/HackWriter/Stats-with-R/blob/pictures/view_txschools.png" width="500">
 
 Let's run basic statistics first.
 ```
@@ -211,11 +216,12 @@ Note that except for the number of students, all the other correlations are sign
 
 Let's draw some histograms and scatter plots, too.
 ```
-hist(txschools$math_meets)
+hist(txschools$read_meets)
 hist(txschools$low_income)
-plot(txschools$low_income, txschools$math_meets)
 plot(txschools$low_income, txschools$read_meets)
 ```
+<img src="https://github.com/HackWriter/Stats-with-R/blob/pictures/scatter_reading_lowinc.png" width="400">
+
 Let's focus on read_meets, the percentage of students passing the state reading test.
 There's a strong correlation of -0.88 between a school's reading pass rates and its share of low-income kids.
 
