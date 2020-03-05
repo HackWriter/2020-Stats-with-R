@@ -9,9 +9,10 @@ First, set your working directory.
 Or you can use the drop-down menu: Session -> Set Working Directory -> Choose Directory
 
 Make sure these four packages are installed and loaded: dplyr, tidyverse, ggplot2 and psych
-**install.packages("*package_name*")
 
-library(*package_name*)**
+**install.packages("*package_name*")**.  # note the quotes here
+
+**library(*package_name*)**. # but no quotes here
 
 ```
 library(dplyr)
