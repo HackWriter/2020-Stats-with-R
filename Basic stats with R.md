@@ -159,6 +159,8 @@ hist(filename$fieldname)
 ```
 hist(nfl$games_won)
 ```
+<img src="./histogram_nfl_games.png" width="400">
+
 For two variables, make a scatter plot.
 
 plot(filename$fieldname1, filename$fieldname2)
