@@ -282,6 +282,26 @@ Let's call it read_model
 read_model <- lm(read_meets ~ low_income, data=txschools)
 summary(read_model)
 ```
+Here's what we get:
+```
+Call:
+lm(formula = read_meets ~ low_income, data = txschools)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-34.897  -5.193   0.118   4.495  26.706 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 82.21907    1.90399   43.18   <2e-16 ***
+low_income  -0.55955    0.02804  -19.95   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 9.195 on 113 degrees of freedom
+Multiple R-squared:  0.779,	Adjusted R-squared:  0.777 
+F-statistic: 398.2 on 1 and 113 DF,  p-value: < 2.2e-16
+```
 Start with the Adjusted R-squared: 0.78
 
 Remember the correlation - that is, the Pearson's R - between read_meets and low_income was 0.883?
