@@ -1,15 +1,16 @@
 ### GETTING STARTED
 
 First, set your working directory. 
-setwd("FILE PATH HERE")
+
+**setwd("*FILE PATH*")**
 
 ```setwd("~/IRE_NICAR/NOLA_2020")```
 
 Or you can use the drop-down menu: Session -> Set Working Directory -> Choose Directory
 
 Make sure these four packages are installed and loaded: dplyr, tidyverse, ggplot2 and psych
-install.packages("package_name")
-library(package_name)
+**install.packages("*package_name*")
+library(*package_name*)**
 
 ```
 library(dplyr)
