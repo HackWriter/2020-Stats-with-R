@@ -30,10 +30,10 @@ nba <- read_csv('nba.csv', col_names = TRUE)
 nfl <- read_csv('nfl.csv', col_names = TRUE)
 txschools <- read_csv('txmiddle.csv', col_names = TRUE)
 ```
-Tip: Avoid column names that contain spaces. Go with 'field_name' not 'field name'
+**Tip:** Avoid column names that contain spaces. Go with 'field_name' not 'field name'
 
 Let's start with the NBA file. To see how a file is structured, type
-str(filename)
+**str(*filename*)**
 ```
 str(nba)
 ```
